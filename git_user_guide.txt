@@ -1,0 +1,6 @@
+1. git  clone https://github.com/3guy/testRe.git
+2. cd testRe
+3. update you code and put to this folder
+4. git add .    
+5. git  commit -m "changes log"  
+6. git push -u origin master: input username/password of your git
