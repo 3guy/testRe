@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{62AAF8C2-711C-46A0-9419-3CEEB67F99AC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OrderManage</RootNamespace>
+    <AssemblyName>OrderManage</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2">
+      <HintPath>..\..\..\2.17Socket聊天程序（一个服务端，多个客户端）\Socket聊天程序（一个服务端，多个客户端）\类库\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\..\jiaoyimao\jiaoyimao\bin\Debug\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SpeechLib, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.SpeechLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TeamLibDAO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\TeamLibDAO.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\ActionFactory.cs" />
+    <Compile Include="Common\CommandInfo.cs" />
+    <Compile Include="Common\CommissionStore.cs" />
+    <Compile Include="Common\DbHelperSQL.cs" />
+    <Compile Include="Common\FacevalueStore.cs" />
+    <Compile Include="Common\GameStore.cs" />
+    <Compile Include="Common\GetCookies.cs" />
+    <Compile Include="Common\HttpHelper.cs" />
+    <Compile Include="Common\InventoryStore.cs" />
+    <Compile Include="Common\JiaoYiMaoHelper.cs" />
+    <Compile Include="Common\OrderStore.cs" />
+    <Compile Include="Common\ProcessOrdersStore.cs" />
+    <Compile Include="Common\PlatformStore.cs" />
+    <Compile Include="Common\UserStore.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Net\IUserData.cs" />
+    <Compile Include="Net\NetServer.cs" />
+    <Compile Include="Net\PackageHelper.cs" />
+    <Compile Include="Net\StickPackDeal.cs" />
+    <Compile Include="Net\User.cs" />
+    <Compile Include="Net\XuLieHua.cs" />
+    <Compile Include="Net\XUser.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Store\DBHelper.cs" />
+    <Compile Include="UI\AddCommission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AddCommission.Designer.cs">
+      <DependentUpon>AddCommission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddFacevalue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AddFacevalue.Designer.cs">
+      <DependentUpon>AddFacevalue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AddGame.Designer.cs">
+      <DependentUpon>AddGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AddInventory.Designer.cs">
+      <DependentUpon>AddInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddPlatform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AddPlatform.Designer.cs">
+      <DependentUpon>AddPlatform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UIHelper.cs" />
+    <Compile Include="UI\UpdateCommission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UpdateCommission.Designer.cs">
+      <DependentUpon>UpdateCommission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UpdateFacevalue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UpdateFacevalue.Designer.cs">
+      <DependentUpon>UpdateFacevalue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UpdateGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UpdateGame.Designer.cs">
+      <DependentUpon>UpdateGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UpdateInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UpdateInventory.Designer.cs">
+      <DependentUpon>UpdateInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UpdatePlatform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UpdatePlatform.Designer.cs">
+      <DependentUpon>UpdatePlatform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UpdateUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UpdateUserInfo.Designer.cs">
+      <DependentUpon>UpdateUserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AddUserInfo.Designer.cs">
+      <DependentUpon>AddUserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ControlInvoke.cs" />
+    <Compile Include="UI\Dispatch.cs" />
+    <Compile Include="UI\IInvokeItem.cs" />
+    <Compile Include="UI\TextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TextForm.Designer.cs">
+      <DependentUpon>TextForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WebLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\WebLogin.Designer.cs">
+      <DependentUpon>WebLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WebLogin3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\WebLogin3.Designer.cs">
+      <DependentUpon>WebLogin3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WebLogin2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\WebLogin2.Designer.cs">
+      <DependentUpon>WebLogin2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\HttpHelper.cs" />
+    <Compile Include="Utilities\HttpItem.cs" />
+    <Compile Include="Utilities\HttpResult.cs" />
+    <Compile Include="Utilities\PostDataType.cs" />
+    <Compile Include="Utilities\ResultType.cs" />
+    <Compile Include="Util\AuToStart.cs" />
+    <Compile Include="Util\ConfigUtil.cs" />
+    <Compile Include="Util\DeskTopCapture.cs" />
+    <Compile Include="Util\DataSetToExcel.cs" />
+    <Compile Include="Util\ExitWindows.cs" />
+    <Compile Include="Util\ExitWindows2.cs" />
+    <Compile Include="Util\FileOperate.cs" />
+    <Compile Include="Util\Helper.cs" />
+    <Compile Include="Util\ImageHelper.cs" />
+    <Compile Include="Util\ImportDataLog.cs" />
+    <Compile Include="Util\IniReadWrite.cs" />
+    <Compile Include="Util\MachineCode.cs" />
+    <Compile Include="Util\Md5Helper.cs" />
+    <Compile Include="Util\MemoryHelper.cs" />
+    <Compile Include="Util\PlayMp3.cs" />
+    <Compile Include="Util\StringHelper.cs" />
+    <Compile Include="Util\Validation.cs" />
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\AddCommission.resx">
+      <DependentUpon>AddCommission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AddFacevalue.resx">
+      <DependentUpon>AddFacevalue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AddGame.resx">
+      <DependentUpon>AddGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AddInventory.resx">
+      <DependentUpon>AddInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AddPlatform.resx">
+      <DependentUpon>AddPlatform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UpdateCommission.resx">
+      <DependentUpon>UpdateCommission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UpdateFacevalue.resx">
+      <DependentUpon>UpdateFacevalue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UpdateGame.resx">
+      <DependentUpon>UpdateGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UpdateInventory.resx">
+      <DependentUpon>UpdateInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UpdatePlatform.resx">
+      <DependentUpon>UpdatePlatform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UpdateUserInfo.resx">
+      <DependentUpon>UpdateUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AddUserInfo.resx">
+      <DependentUpon>AddUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TextForm.resx">
+      <DependentUpon>TextForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\WebLogin.resx">
+      <DependentUpon>WebLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\WebLogin3.resx">
+      <DependentUpon>WebLogin3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\WebLogin2.resx">
+      <DependentUpon>WebLogin2.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ctrl_p_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ctrl_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ctrl_stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_refresh_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAL\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NetEntity\NetEntity.csproj">
+      <Project>{39e61ad9-c560-478f-a02d-318a3ce62f72}</Project>
+      <Name>NetEntity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

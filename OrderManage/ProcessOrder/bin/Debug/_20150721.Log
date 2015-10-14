@@ -1,0 +1,23 @@
+Trace#2015-07-21 21:21:29: ReceiveData:无法将类型为“System.String”的对象强制转换为类型“System.Data.DataTable”。
+触发异常方法：Void 初始化采集()
+异常详细信息   在 ProcessOrder.UI.QuickForm.初始化采集() 位置 d:\订单管理\OrderManage\ProcessOrder\UI\QuickForm.cs:行号 83
+   在 ProcessOrder.UI.QuickForm.QuickForm_Load(Object sender, EventArgs e) 位置 d:\订单管理\OrderManage\ProcessOrder\UI\QuickForm.cs:行号 68
+
+Trace#2015-07-21 21:47:26: SendObj:无法将数据写入传输连接: 远程主机强迫关闭了一个现有的连接。。
+触发异常方法：Void Write(Byte[], Int32, Int32)
+异常详细信息   在 System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 size)
+   在 System.IO.BinaryWriter.Write(Byte[] buffer)
+   在 ProcessOrder.Net.NetClient.Send(Object obj) 位置 d:\订单管理\OrderManage\ProcessOrder\Net\NetClient.cs:行号 246
+
+Trace#2015-07-21 21:47:26: SendObj:无法将数据写入传输连接: 远程主机强迫关闭了一个现有的连接。。
+触发异常方法：Void Write(Byte[], Int32, Int32)
+异常详细信息   在 System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 size)
+   在 System.IO.BinaryWriter.Write(Byte[] buffer)
+   在 ProcessOrder.Net.NetClient.Send(Object obj) 位置 d:\订单管理\OrderManage\ProcessOrder\Net\NetClient.cs:行号 246
+
+Trace#2015-07-21 21:47:26: SendObj:无法将数据写入传输连接: 远程主机强迫关闭了一个现有的连接。。
+触发异常方法：Void Write(Byte[], Int32, Int32)
+异常详细信息   在 System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 size)
+   在 System.IO.BinaryWriter.Write(Byte[] buffer)
+   在 ProcessOrder.Net.NetClient.Send(Object obj) 位置 d:\订单管理\OrderManage\ProcessOrder\Net\NetClient.cs:行号 246
+

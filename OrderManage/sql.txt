@@ -1,0 +1,101 @@
+--------------截取字符串函数。调用dbo.str_get("要截取的字符串","开始标记","结束标记")
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[str_get]') AND type in (N'FN', N'IF', N'TF', N'FS', N'FT')) 
+DROP FUNCTION [dbo].[str_get] 
+GO 
+create function str_get(@src varchar(8000), @start varchar(8000),@end varchar(8000))
+returns varchar(8000)
+as
+begin
+	declare @sindex int,@eindex int,@rstr varchar(8000)
+
+	set @src=ltrim(@src)
+	set @start=ltrim(@start)
+	set @end=ltrim(@end)
+
+	set @src=rtrim(@src)
+	set @start=rtrim(@start)
+	set @end=rtrim(@end)
+	if @src is null
+	begin
+		return ''
+	end
+
+	set @sindex=CHARINDEX(@start,@src)
+	if @sindex>0
+	begin
+		set @sindex=@sindex+len(@start)
+	end
+	else
+	begin
+		return ''
+	end
+
+	set @eindex=CHARINDEX(@end,@src,@sindex)
+	if @eindex<=0
+	begin
+		return ''
+	end
+
+	set @rstr=SubString(@src,@sindex,@eindex-@sindex)
+	if @rstr is null
+	begin
+		return ''
+	end
+    return @rstr
+end
+
+
+---------------------------------------搜索所有游戏
+INSERT INTO game (gamename)
+select  distinct REPLACE(dbo.str_get([订单详情],'所属游戏：',char(10)),'【苹果版】','') from [order] 
+where REPLACE(dbo.str_get([订单详情],'所属游戏：',char(10)),'【苹果版】','') is not null and REPLACE(dbo.str_get([订单详情],'所属游戏：',char(10)),'【苹果版】','') <> ''
+
+
+
+
+
+
+
+
+-----------------
+USE [Order]
+GO
+/****** 对象:  Table [dbo].[commission]    脚本日期: 07/22/2015 23:19:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[commission](
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
+	[gameid] [bigint] NOT NULL,
+	[price] [decimal](18, 3) NULL,
+	[type] [varchar](500) COLLATE Chinese_PRC_CI_AS NULL CONSTRAINT [DF_commission_type]  DEFAULT ('其它'),
+	[time] [datetime] NULL CONSTRAINT [DF_commission_time]  DEFAULT (getdate())
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+
+
+
+
+
+USE [Order]
+GO
+/****** 对象:  Table [dbo].[game]    脚本日期: 07/22/2015 23:19:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[game](
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
+	[gamename] [varchar](500) COLLATE Chinese_PRC_CI_AS NULL,
+	[time] [datetime] NULL CONSTRAINT [DF_game_time]  DEFAULT (getdate())
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF

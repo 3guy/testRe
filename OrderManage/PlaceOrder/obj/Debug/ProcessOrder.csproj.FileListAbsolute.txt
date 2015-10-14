@@ -1,0 +1,13 @@
+D:\订单管理\OrderManage\ProcessOrder\bin\Debug\Microsoft.mshtml.dll
+D:\订单管理\OrderManage\ProcessOrder\bin\Debug\NetEntity.dll
+D:\订单管理\OrderManage\ProcessOrder\bin\Debug\NetEntity.pdb
+D:\订单管理\OrderManage\ProcessOrder\obj\Debug\ProcessOrder.csprojResolveAssemblyReference.cache
+D:\订单管理\OrderManage\ProcessOrder\obj\Debug\ProcessOrder.csproj.GenerateResource.Cache
+D:\订单管理\OrderManage\ProcessOrder\obj\Debug\PlaceOrder.LoginForm.resources
+D:\订单管理\OrderManage\ProcessOrder\obj\Debug\PlaceOrder.UI.QuickForm.resources
+D:\订单管理\OrderManage\ProcessOrder\bin\Debug\ProcessOrder.exe.config
+D:\订单管理\OrderManage\ProcessOrder\bin\Debug\ProcessOrder.exe
+D:\订单管理\OrderManage\ProcessOrder\bin\Debug\ProcessOrder.pdb
+D:\订单管理\OrderManage\ProcessOrder\obj\Debug\ProcessOrder.Properties.Resources.resources
+D:\订单管理\OrderManage\ProcessOrder\obj\Debug\ProcessOrder.exe
+D:\订单管理\OrderManage\ProcessOrder\obj\Debug\ProcessOrder.pdb

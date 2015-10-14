@@ -1,0 +1,4 @@
+Trace#2015-06-23 16:32:54: SendObj:未将对象引用设置到对象的实例。
+触发异常方法：Void Send(System.Object)
+异常详细信息   在 ProcessOrder.Net.NetClient.Send(Object obj) 位置 d:\订单管理\OrderManage\ProcessOrder\Net\NetClient.cs:行号 246
+

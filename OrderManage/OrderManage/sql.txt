@@ -1,0 +1,30 @@
+---生成面值表
+insert into facevalue(appid,price)
+select distinct [inventory].id,CAST(SubString([order].订单详情,CHARINDEX('商品原价：',[order].订单详情)+5,CHARINDEX(char(10),[order].订单详情,CHARINDEX('商品原价：',[order].订单详情))-CHARINDEX('商品原价：',[order].订单详情)-6) AS decimal(18,3))
+from [order],[inventory]
+
+
+---------结构
+USE [Order]
+GO
+/****** 对象:  Table [dbo].[facevalue]    脚本日期: 06/23/2015 22:21:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[facevalue](
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
+	[appid] [bigint] NOT NULL,
+	[gamename] [varchar](500) COLLATE Chinese_PRC_CI_AS NULL,
+	[price] [varchar](500) COLLATE Chinese_PRC_CI_AS NOT NULL CONSTRAINT [DF_facevalue_price]  DEFAULT ((0)),
+	[value] [decimal](18, 3) NOT NULL CONSTRAINT [DF_facevalue_value]  DEFAULT ((0)),
+ CONSTRAINT [PK_facevalue] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
